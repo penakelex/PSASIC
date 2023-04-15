@@ -1,38 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FriendsActivity"
-    android:scrollbarAlwaysDrawHorizontalTrack="true">
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:scrollbarAlwaysDrawHorizontalTrack="true"
+    tools:context=".FriendsActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Possible friends"
-            android:textSize="20dp"
-            android:textColor="@color/black"/>
+            android:text="@string/server_members"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="36dp" />
+
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recommend_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/serverMembers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             tools:listitem="@layout/item_user" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My friends"
-            android:textSize="20dp"
-            android:textColor="@color/black"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/friends_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/item_user"/>
-    </LinearLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

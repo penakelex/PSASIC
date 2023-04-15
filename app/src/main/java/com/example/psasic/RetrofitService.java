@@ -17,7 +17,7 @@ public class RetrofitService {
     }
 
     public static Retrofit getInstance() {
-        if (retrofit==null) retrofit = create();
+        if (retrofit == null) retrofit = create();
         return retrofit;
     }
 }
