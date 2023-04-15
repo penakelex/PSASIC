@@ -21,21 +21,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        LoginService.getInstance().register("БЛЯТЬ", "РАБОТАЙ СУКА").enqueue(new Callback<Response>() {
-            @Override
-            public void onResponse(Call<Response> call, Response<Response> response) {
-                Log.d("TAG", "onResponse: "+response.body().toString());
-            }
-
-            @Override
-            public void onFailure(Call<Response> call, Throwable t) {
-                Log.d("TAG", "onFailure: "+t);
-            }
-        });
     }
 }

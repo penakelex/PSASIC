@@ -21,7 +21,6 @@ public class FriendsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityFriendsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
