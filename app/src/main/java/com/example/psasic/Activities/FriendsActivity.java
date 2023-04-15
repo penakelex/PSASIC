@@ -23,5 +23,6 @@ public class FriendsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityFriendsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.arrowBack.setOnClickListener(v -> onBackPressed());
     }
 }

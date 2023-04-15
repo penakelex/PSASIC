@@ -40,6 +40,15 @@
                 android:value="" />
         </activity>
         <activity
+                android:name=".Activities.RegisterActivity"
+            android:exported="false"
+            android:label="RegisterActivity"
+            android:theme="@style/Theme.PSASIC.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.MainActivity"
             android:exported="false">
 
