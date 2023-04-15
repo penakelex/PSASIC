@@ -12,5 +12,5 @@ public interface LoginAPI {
 
     @POST("/register")
     @FormUrlEncoded
-    Call<ResponseBody> register(@Field("username") String username, @Field("password") String password );
+    Call<ResponseBody> register(@Field("name") String name, @Field("password") String password );
 }

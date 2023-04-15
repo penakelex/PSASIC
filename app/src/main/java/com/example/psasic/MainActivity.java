@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         LoginService.getInstance().register("БЛЯТЬ", "РАБОТАЙ СУКА").enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                Log.d("TAG", "onResponse: "+response.body().toString());
+                Log.d("TAG", "onResponse: "+response.body());
             }
 
             @Override
