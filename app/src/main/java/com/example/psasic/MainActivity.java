@@ -6,10 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.psasic.databinding.ActivityFriendsBinding;
 import com.example.psasic.databinding.ActivityMainBinding;
-
-import org.json.JSONObject;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

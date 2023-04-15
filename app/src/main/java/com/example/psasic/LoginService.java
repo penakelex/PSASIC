@@ -20,19 +20,4 @@ public class LoginService {
         if (loginAPI == null) loginAPI = create();
         return loginAPI;
     }
-
-    public void register(String userName, String password) {
-        LoginService.getInstance().register(userName, password).enqueue(new Callback<Response>() {
-            @Override
-            public void onResponse(@NonNull Call<Response> call, @NonNull Response<Response> response) {
-                assert response.body() != null;
-                Log.d("TAG", "onResponse: " + response.body().toString());
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<Response> call, @NonNull Throwable t) {
-                Log.d("TAG", "onFailure: " + t);
-            }
-        });
-    }
 }
