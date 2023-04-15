@@ -19,14 +19,13 @@ public class BottomMapFragment extends Fragment {
         binding = FragmentBottomMapBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
-
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = FragmentBottomMapBinding.inflate(getLayoutInflater());
         binding.messengerButton.setOnClickListener(v -> changeActivity(1));
         binding.friendsButton.setOnClickListener(v -> changeActivity(2));
     }
-    @Override
 
     private void changeActivity(int activity) {
         switch (activity) {
