@@ -7,7 +7,11 @@ import retrofit2.http.POST;
 public class RetrofitService {
 
     private static Retrofit retrofit;
+<<<<<<< HEAD
     private static final String BASE_URL = "http://127.0.0.1:8080";
+=======
+    private static final String BASE_URL = "http://127.0.0.1";
+>>>>>>> origin/main
 
     private static Retrofit create() {
         return new Retrofit.Builder()
