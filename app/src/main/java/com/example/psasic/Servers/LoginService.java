@@ -1,12 +1,4 @@
-package com.example.psasic;
-
-import android.util.Log;
-
-import androidx.annotation.NonNull;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+package com.example.psasic.Servers;
 
 public class LoginService {
     private static LoginAPI loginAPI;

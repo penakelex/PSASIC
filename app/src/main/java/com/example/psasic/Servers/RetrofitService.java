@@ -1,4 +1,4 @@
-package com.example.psasic;
+package com.example.psasic.Servers;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;

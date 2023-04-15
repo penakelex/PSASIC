@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="4dp"
     android:scrollbarAlwaysDrawHorizontalTrack="true"
-    tools:context=".FriendsActivity">
+    tools:context=".Activities.FriendsActivity">
 
         <ImageButton
             android:id="@+id/arrow_back"

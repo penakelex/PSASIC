@@ -1,4 +1,4 @@
-package com.example.psasic;
+package com.example.psasic.Activities;
 
 import android.os.Bundle;
 
