@@ -27,6 +27,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         });
         SupportMapFragment fragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_map);
         fragment.getMapAsync(this::onMapReady);
+
+        binding.profileBtn.setOnClickListener(v->{
+            Intent intent = new Intent(MapActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
     }
 
 
