@@ -13,5 +13,6 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySettingsActivivyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.arrowBack.setOnClickListener(v->onBackPressed());
     }
 }

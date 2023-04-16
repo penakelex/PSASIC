@@ -35,10 +35,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
-        binding.signinButton.setOnClickListener(v -> loginRequest(
-                binding.username.getText().toString(),
-                binding.textPassword.getText().toString()
-        ));
+        //binding.signinButton.setOnClickListener(v -> loginRequest(
+        //        binding.username.getText().toString(),
+        //       binding.textPassword.getText().toString()
+        //));
+        binding.signinButton.setOnClickListener(v->{
+            Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        });
         binding.createAcc.setOnClickListener(v->{
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
