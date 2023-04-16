@@ -6,16 +6,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.example.psasic.Activities.FriendsActivity;
-import com.example.psasic.Activities.MainActivity;
 import com.example.psasic.Activities.MessengerActivity;
-import com.example.psasic.R;
 import com.example.psasic.databinding.FragmentNavigationBinding;
 
 public class FragmentNavigation extends Fragment {
