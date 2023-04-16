@@ -1,22 +1,17 @@
-package com.example.psasic;
-
-import android.os.Bundle;
+package com.example.psasic.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
 
 import com.example.psasic.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private ActivityLoginBinding binding;
-
+   private ActivityLoginBinding binding;
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
     }
 }

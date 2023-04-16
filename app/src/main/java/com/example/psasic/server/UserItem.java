@@ -1,4 +1,4 @@
-package com.example.psasic;
+package com.example.psasic.server;
 
 public class UserItem {
     public String username;
