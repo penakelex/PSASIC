@@ -44,6 +44,7 @@ public class ServerSelectActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<UsersResponse> call, @NonNull Response<UsersResponse> response) {
                 if (response.body()!=null) {
                     Log.e("ПОКАЖИСЬ ЧЁРТ", "onResponse: "+response.body().toString());
+                    response.body().code = response.raw().code();
                     response.body().update();
                     if (response.body().success) {
                         startActivity(new Intent(getApplicationContext(), MapActivity.class));
