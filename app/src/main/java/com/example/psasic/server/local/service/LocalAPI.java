@@ -33,11 +33,11 @@ public interface LocalAPI {
 
     @POST("/friends")
     @FormUrlEncoded
-    Call<FriendsResponse> quit(@Field("authKey") String authKey);
+    Call<FriendsResponse> friends(@Field("authKey") String authKey);
 
     @POST("/setGeo")
     @FormUrlEncoded
-    Call<Response> about(@Field("authKey") String authKey,
+    Call<Response> setGeo(@Field("authKey") String authKey,
                             @Field("altitude") double altitude,
                             @Field("longitude ") double longitude);
 
