@@ -15,7 +15,7 @@ public class ServerSelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityServerSelectBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        binding.arrowBack.setOnClickListener(v->onBackPressed());
         binding.signinButton.setOnClickListener(v -> serverFirstRequest());
     }
 
