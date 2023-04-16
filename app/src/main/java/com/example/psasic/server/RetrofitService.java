@@ -1,0 +1,23 @@
+package com.example.psasic.server;
+
+import retrofit2.Retrofit;
+import retrofit2.converter.moshi.MoshiConverterFactory;
+import retrofit2.http.POST;
+
+public class RetrofitService {
+
+    private static Retrofit retrofit;
+    public static final String BASE_URL = "http://192.168.1.225:8080";
+
+    private static Retrofit create() {
+        return new Retrofit.Builder()
+                .addConverterFactory(MoshiConverterFactory.create())
+                .baseUrl(BASE_URL)
+                .build();
+    }
+
+    public static Retrofit getInstance() {
+        if (retrofit == null) retrofit = create();
+        return retrofit;
+    }
+}
