@@ -4,7 +4,7 @@
     android:id="@+id/nav_graph">
 
     <fragment
-        android:name="com.example.psasic.Fragments.MapFragment"
+        android:name="com.example.psasic.MapFragment"
         android:id="@+id/map_fragment"
         />
 
