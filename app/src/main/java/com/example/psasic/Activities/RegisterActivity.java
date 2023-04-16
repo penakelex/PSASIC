@@ -27,11 +27,12 @@ public class RegisterActivity extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.registerButton.setOnClickListener(v -> registerRequest(
+        binding.signupBtn.setOnClickListener(v -> registerRequest(
                 binding.textName.getText().toString(),
                 binding.textPassword.getText().toString(),
                 binding.textConfirmPassword.getText().toString()
                 ));
+        binding.arrowBack.setOnClickListener(v-> onBackPressed());
     }
 
     private void registerRequest(String email, String username, String password) {

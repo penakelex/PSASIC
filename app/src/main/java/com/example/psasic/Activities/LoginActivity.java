@@ -39,6 +39,10 @@ public class LoginActivity extends AppCompatActivity {
                 binding.username.getText().toString(),
                 binding.textPassword.getText().toString()
         ));
+        binding.createAcc.setOnClickListener(v->{
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
 
     }
 

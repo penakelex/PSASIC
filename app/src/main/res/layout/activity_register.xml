@@ -1,49 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.RegisterActivity">
+    <ImageButton
+        android:layout_marginStart="32dp"
+        android:id="@+id/arrow_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="38dp"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:layout_marginTop="80dp"
         android:id="@+id/logo"
         android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/rounded_bg"
-        android:scaleType="center"
-        android:src="@drawable/icons128"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@null" />
-
-    <TextView
-        android:id="@+id/welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
-        android:text="Getting started"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_bg"
+        android:layout_height="160dp"
+        android:scaleType="center"
+        android:src="@drawable/icons128"/>
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/getstarted"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Getting Started"
+        android:textColor="@color/black"
         android:layout_marginStart="32dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/rg_text"
+        app:layout_constraintTop_toBottomOf="@id/getstarted"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Register to use the app"
         android:textColor="@color/normal_green"
+        android:layout_marginStart="32dp"
         android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome" />
+        android:textStyle="normal" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -52,14 +58,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:hint="@string/email"
+        android:hint="@string/name"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:endIconMode="clear_text"
+        app:helperText="*Required"
+        app:helperTextTextColor="@color/Crimson"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login"
-        app:startIconDrawable="@drawable/baseline_email_24">
+        app:layout_constraintTop_toBottomOf="@id/rg_text"
+        app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textName"
@@ -67,21 +77,24 @@
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textPasswordLayout"
+        android:id="@+id/textInputPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:hint="@string/username"
+        android:hint="@string/password"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:endIconMode="password_toggle"
+        app:helperText="*Required"
+        app:helperTextTextColor="@color/Crimson"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textNameLayout"
-        app:startIconDrawable="@drawable/ic_account">
+        app:startIconDrawable="@drawable/ic_password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textPassword"
@@ -90,18 +103,22 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textConfirmPasswordLayout"
+        android:id="@+id/textConfirmLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/password"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:endIconMode="password_toggle"
+        app:helperText="*Required"
+        app:helperTextTextColor="@color/Crimson"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textPasswordLayout"
+        app:layout_constraintTop_toBottomOf="@id/textInputPassword"
         app:startIconDrawable="@drawable/ic_password">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -110,19 +127,16 @@
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/signup_btn"
         android:layout_width="276dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/lime"
-        android:text="REGISTER"
+        android:text="SIGN UP"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textConfirmPasswordLayout" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/textConfirmLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
