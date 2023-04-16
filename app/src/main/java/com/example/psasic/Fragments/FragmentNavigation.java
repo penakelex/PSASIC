@@ -1,5 +1,7 @@
 package com.example.psasic.Fragments;
 
+import static androidx.core.app.ShareCompat.getCallingActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.psasic.Activities.CameraActivity;
 import com.example.psasic.Activities.ChatsActivity;
 import com.example.psasic.Activities.FriendsActivity;
 import com.example.psasic.Activities.MapActivity;
@@ -30,6 +33,7 @@ public class FragmentNavigation extends Fragment {
         binding.chatButton.setOnClickListener(v -> changeActivity(1));
         binding.friendsButton.setOnClickListener(v -> changeActivity(2));
         binding.mapButton.setOnClickListener(v -> changeActivity(3));
+        binding.cameraButton.setOnClickListener(v -> changeActivity(4));
         return binding.getRoot();
     }
     @Override
@@ -47,6 +51,9 @@ public class FragmentNavigation extends Fragment {
                 break;
             case 3:
                 startActivity(new Intent(getActivity(), MapActivity.class));
+                break;
+            case 4:
+                startActivity(new Intent(getActivity(), CameraActivity.class));
                 break;
         }
     }

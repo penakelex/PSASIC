@@ -14,6 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
             android:backgroundTint="@color/transparent"
             android:src="@drawable/arrow_back"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,8 +25,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Friends"
-            android:layout_marginLeft="10dp"
+            android:text="People"
+            android:layout_marginStart="10dp"
             android:textColor="@color/black"
             android:textSize="36sp"
             android:textStyle="bold"
@@ -33,6 +34,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:layout_marginStart="24dp"
             android:id="@+id/serverMembersText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

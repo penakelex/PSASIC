@@ -29,8 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         binding.signupBtn.setOnClickListener(v -> registerRequest(
                 binding.textName.getText().toString(),
-                binding.textPassword.getText().toString(),
-                binding.textConfirmPassword.getText().toString()
+                binding.textInputPassword.getText().toString(),
+                binding.inputEmail.getText().toString()
                 ));
         binding.arrowBack.setOnClickListener(v-> onBackPressed());
     }
