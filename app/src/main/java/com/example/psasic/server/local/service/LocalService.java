@@ -1,17 +1,16 @@
 package com.example.psasic.server.local.service;
 
-import com.example.psasic.server.RetrofitService;
+import com.example.psasic.server.RetrofitServiceLocal;
 
 public class LocalService {
-    private static LocalAPI loginAPI;
-    private static final String BASE_URL = RetrofitService.BASE_URL;
+    private static LocalAPI localAPI;
 
     private static LocalAPI create() {
-        return RetrofitService.getInstance().create(LocalAPI.class);
+        return RetrofitServiceLocal.getInstance().create(LocalAPI.class);
     }
 
     public static LocalAPI getInstance() {
-        if (loginAPI == null) loginAPI = create();
-        return loginAPI;
+        if (localAPI == null) localAPI = create();
+        return localAPI;
     }
 }

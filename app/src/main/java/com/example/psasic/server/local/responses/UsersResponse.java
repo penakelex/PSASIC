@@ -2,12 +2,19 @@ package com.example.psasic.server.local.responses;
 
 import com.example.psasic.server.Response;
 
+import java.util.Arrays;
+
 public class UsersResponse extends Response {
 
-    String[] userItems;
+    public String[] users;
 
-    public UsersResponse(int status, String[] userItems, String message) {
-        super(status, message);
-        this.userItems = userItems;
+    public UsersResponse(int code, String[] users, String message) {
+        super(code, message);
+        this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return this.code+" "+this.success+" "+this.message+" "+Arrays.toString(this.users);
     }
 }

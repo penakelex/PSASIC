@@ -9,8 +9,8 @@ public class UserResponse extends Response {
     public String dateOfBirth;
     public String icon;
 
-    public UserResponse(int status, String username, String name, String surname, String dateOfBirth, String icon, String message) {
-        super(status, message);
+    public UserResponse(int code, String username, String name, String surname, String dateOfBirth, String icon, String message) {
+        super(code, message);
         this.username = username;
         this.name = name;
         this.surname = surname;

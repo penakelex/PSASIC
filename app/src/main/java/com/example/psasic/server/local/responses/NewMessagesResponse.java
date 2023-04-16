@@ -5,8 +5,8 @@ import com.example.psasic.server.Response;
 public class NewMessagesResponse extends Response {
     public String[] newMessages;
 
-    public NewMessagesResponse(int status, String message, String[] newMessages) {
-        super(status, message);
+    public NewMessagesResponse(int code, String message, String[] newMessages) {
+        super(code, message);
         this.newMessages = newMessages;
     }
 }

@@ -7,8 +7,8 @@ public class GeoResponse extends Response {
     public double longitude;
 
 
-    public GeoResponse(int status, double altitude, double longitude, String message) {
-        super(status, message);
+    public GeoResponse(int code, double altitude, double longitude, String message) {
+        super(code, message);
         this.altitude = altitude;
         this.longitude = longitude;
     }

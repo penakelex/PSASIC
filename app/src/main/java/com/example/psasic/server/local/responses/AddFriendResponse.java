@@ -6,8 +6,8 @@ public class AddFriendResponse extends Response {
     public int state;
 
 
-    public AddFriendResponse(int status, int state, String message) {
-        super(status, message);
+    public AddFriendResponse(int code, int state, String message) {
+        super(code, message);
         this.state = state;
     }
 }

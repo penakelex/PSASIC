@@ -3,10 +3,12 @@ package com.example.psasic.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.psasic.databinding.ActivityLoginBinding;
@@ -19,14 +21,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-   private ActivityLoginBinding binding;
+    private ActivityLoginBinding binding;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        sharedPreferences = getSharedPreferences("loginData", Context.MODE_PRIVATE);
 
-        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
         String entryKey = sharedPreferences.getString("entryKey", null);
 
         if (entryKey!=null) {
@@ -35,15 +38,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
-        //binding.signinButton.setOnClickListener(v -> loginRequest(
-        //        binding.username.getText().toString(),
-        //       binding.textPassword.getText().toString()
-        //));
-        binding.signinButton.setOnClickListener(v->{
-            Intent intent = new Intent(LoginActivity.this, MapActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-        });
+        binding.signinButton.setOnClickListener(v -> loginRequest(
+                binding.username.getText().toString(),
+               binding.textPassword.getText().toString()
+        ));
+
         binding.createAcc.setOnClickListener(v->{
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
@@ -53,10 +52,18 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginRequest(String username, String password) {
         LoginService.getInstance().login(username, password).enqueue(new Callback<AuthResponse>() {
+
+            @SuppressLint("CommitPrefEdits")
             @Override
             public void onResponse(@NonNull Call<AuthResponse> call, @NonNull Response<AuthResponse> response) {
                 if (response.body()!=null) {
-                    startActivity(new Intent(getApplicationContext(), MapActivity.class));
+                    response.body().update();
+                    if (response.body().success) {
+                        sharedPreferences.edit().putString("entryKey", response.body().authKey).apply();
+                        startActivity(new Intent(getApplicationContext(), ServerSelectActivity.class));
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Ошибка: "+response.body().message, Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "Ошибка: сервер вернул null", Toast.LENGTH_SHORT).show();
                 }
@@ -75,8 +82,13 @@ public class LoginActivity extends AppCompatActivity {
         LoginService.getInstance().isSession(entryKey).enqueue(new Callback<SessionResponse>() {
             @Override
             public void onResponse(@NonNull Call<SessionResponse> call, @NonNull Response<SessionResponse> response) {
-                if (response.body()==null) {
-                    result[0] = response.body().state;
+                if (response.body()!=null) {
+                    response.body().update();
+                    if (response.body().success) {
+                        result[0] = response.body().state;
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Ошибка: " + response.body().message, Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "Ошибка: сервер вернул null", Toast.LENGTH_SHORT).show();
                 }
